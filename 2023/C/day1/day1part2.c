@@ -72,7 +72,9 @@ int get_row_number(char *line)
 		count--;
 	}
 
-	int row_number = (first * 10) + last;
+	int row_number = -1;
+	if (first != -1 && last != -1)
+		row_number = (first * 10) + last;
 	return (row_number);
 }
 
