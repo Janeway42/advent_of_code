@@ -2,7 +2,7 @@
 #include <errno.h>
 #include "../basics/basics.h"
 
-#define BUFFER 50
+#define BUFFER 100
 
 int verify_numbers(char *str)
 {
