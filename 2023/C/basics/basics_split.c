@@ -16,6 +16,8 @@ static int	str_length(char const *str, char c)
 {
 	int size = 0;
 
+	for (int i = 0; str[i] == c; i++){}
+
 	for (int i = 0; str[i] != '\0' && str[i] != c; i++)
 		size++;
 	return (size);
@@ -32,9 +34,11 @@ static void	*cleanup_memory(char **output, int position)
 static char	**fill_output(char const *str, int amount_str, char c, char **output)
 {
 	int i = -1;
-	for (; i < amount_str; i++)
+	for (; i < amount_str;)
 	{
 		++i;
+		if (i == amount_str)
+			break ;
 		while(*str == c)
 			str++;
 		int size = str_length(str, c);
